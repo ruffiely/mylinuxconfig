@@ -1,0 +1,10 @@
+URxvt.depth:    32
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=16
+URxvt.shading:  30
+URxvt.scrollBar:    false
+URxvt.letterSpace:  -1
+URxvt.fading:   0
+URxvt.transparent:  true
+URxvt.foreground: #f2f2f2
+URxvt.background: #101010
+URxvt.dynamicColors: on
