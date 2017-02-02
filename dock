@@ -1,0 +1,10 @@
+#!/bin/bash
+DP=$(xrandr | grep -E "HDMI[12345] connected" | grep -oE "HDMI[12345]")
+xrandr --output $DP --above eDP1 --auto
+pacmd set-sink-port 0 analog-output
+sleep 3
+for W in 1 2 3 4 5 6 7 8; do
+  i3-msg "workspace $W; move workspace to output $DP"
+done
+i3-msg "workspace 9; move workspace to output eDP1"
+sleep 1
