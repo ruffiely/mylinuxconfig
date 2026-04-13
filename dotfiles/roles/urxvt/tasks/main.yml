@@ -1,0 +1,12 @@
+- name: install urxvt
+  package:
+    name:
+      - rxvt-unicode
+      - rxvt-unicode-terminfo
+    state: present
+  become: yes
+- name: symlink xresources
+  file:
+    src: "{{ ansible_env.PWD }}/roles/urxvt/files/resources"
+    path: "~/.Xresources"
+    state: link

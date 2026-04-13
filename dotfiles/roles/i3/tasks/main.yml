@@ -1,0 +1,22 @@
+- name: install i3 env
+  package:
+    name:
+      - i3-wm
+      - i3blocks
+      - rofi
+      - i3lock
+      - i3status
+      - powerline
+      - dunst
+    state: present
+  become: yes
+- name: symlink i3 config
+  file:
+    src: "{{ ansible_env.PWD }}/roles/i3/files/config"
+    path: "~/.config/i3/config"
+    state: link
+- name: symlink i3 blocks config
+  file:
+    src: "{{ ansible_env.PWD }}/roles/i3/files/i3blocks_config"
+    path: "~/.config/i3blocks/config"
+    state: link
